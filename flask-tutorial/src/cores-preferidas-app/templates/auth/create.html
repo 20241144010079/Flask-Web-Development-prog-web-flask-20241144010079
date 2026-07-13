@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Nova Cor{% endblock %}
+
+{% block content %}
+
+<h1>Adicionar Cor</h1>
+
+<form method="post">
+
+    <label for="name">Nome da cor</label>
+    <input name="name" id="name" required>
+
+
+    <label for="hex">Código HEX</label>
+    <input name="hex" id="hex" placeholder="#FFFFFF" required>
+
+
+    <label for="description">Descrição</label>
+    <textarea name="description" id="description"></textarea>
+
+
+    <input type="submit" value="Salvar">
+
+</form>
+
+{% endblock %}

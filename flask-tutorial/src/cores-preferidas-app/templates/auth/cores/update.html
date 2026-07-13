@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Cor{% endblock %}
+
+{% block content %}
+
+<h1>Editar Cor</h1>
+
+<form method="post">
+
+    <label for="name">Nome da cor</label>
+    <input name="name" id="name" value="{{ color['name'] }}" required>
+
+    <label for="hex">Código HEX</label>
+    <input name="hex" id="hex" value="{{ color['hex'] }}" required>
+
+    <label for="description">Descrição</label>
+    <textarea name="description" id="description">{{ color['description'] }}</textarea>
+
+    <input type="submit" value="Salvar">
+
+</form>
+
+<form action="{{ url_for('cores.delete', id=color['id']) }}" method="post">
+    <input type="submit" value="Excluir">
+</form>
+
+{% endblock %}
