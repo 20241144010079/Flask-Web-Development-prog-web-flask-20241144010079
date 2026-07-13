@@ -1,0 +1,3 @@
+graft corespreferidas/static
+graft corespreferidas/templates
+global-exclude *.pyc
