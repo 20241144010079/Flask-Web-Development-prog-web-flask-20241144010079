@@ -7,8 +7,8 @@ bp = Blueprint('cores', __name__)
 @bp.route('/')
 def index():
     db = get_db()
-        colors = db.execute(
-                'SELECT * FROM color'
-                    ).fetchall()
+    colors = db.execute(
+        'SELECT * FROM color'
+    ).fetchall()
 
-                        return render_template('cores/index.html', colors=colors)
+    return render_template('cores/index.html', colors=colors)
