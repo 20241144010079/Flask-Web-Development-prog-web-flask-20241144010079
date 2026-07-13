@@ -1,8 +1,17 @@
+DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS color;
 
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
 CREATE TABLE color (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_id INTEGER NOT NULL,
     name TEXT NOT NULL,
-      hex TEXT NOT NULL,
-        description TEXT NOT NULL
-        );
+    hex TEXT NOT NULL,
+    description TEXT NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES user (id)
+);
